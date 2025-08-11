@@ -11,12 +11,12 @@ ServiceBusSender sender;
 // number of messages to be sent to the topic 
 const int numOfMessages = 3;
 
-// creat a client to connect to our Service Bus namespace
+// create a client to connect to our Service Bus namespace
 client = new ServiceBusClient(
-    "nicolasnamespace.servicebus.windows.net",
+    "<your-namespace>.servicebus.windows.net",
     new DefaultAzureCredential());
 
-sender = client.CreateSender("mytopic");
+sender = client.CreateSender("<your-topic-name>");
 
 // create a batch
 using ServiceBusMessageBatch messageBatch = await sender.CreateMessageBatchAsync();
